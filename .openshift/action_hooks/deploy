@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# AGXI, Andrew Galdes
+# Part of the OpenShift quick-start appliation. 
+
+
+
+# Create the database table structure.
+SQL="
+CREATE TABLE myQuickStartApp (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50)
+)
+"
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" -e ${SQL} "$OPENSHIFT_APP_NAME" > /dev/null 2>&1
+
+
+
+# Add some data into the newly created table.
+SQL="
+INSERT INTO  myQuickStartApp (firstname, lastname, email) VALUES ('Andrew', 'Galdes', 'andrew.galdes@agix.com.au')
+"
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" -e ${SQL} "$OPENSHIFT_APP_NAME" > /dev/null 2>&1
+
+
+
+# We're done!
+exit
