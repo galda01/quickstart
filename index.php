@@ -25,7 +25,6 @@ The database contains the following information:
 <table border="1">
 
 <?php
-echo "Welcome to my test quick-start application called " . $myApp;
 $conn = db_connect($myApp);
 
 $sql = "SELECT * FROM myQuickStartApp";
