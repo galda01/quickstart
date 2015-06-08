@@ -14,7 +14,7 @@ function db_connect($myApp)
         $db_username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
         $db_password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
         $db_host = getenv('OPENSHIFT_MYSQL_DB_HOST') . ":" . getenv('OPENSHIFT_MYSQL_DB_PORT');
-        $db_name = $dbName;
+        $db_name = $myApp;
         $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
         return $conn;
 }
