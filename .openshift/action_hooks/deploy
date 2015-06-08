@@ -14,7 +14,7 @@ lastname VARCHAR(30) NOT NULL,
 email VARCHAR(50)
 )
 "
-/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" -e ${SQL} "$OPENSHIFT_APP_NAME" > /dev/null 2>&1
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" -e "${SQL}" "$OPENSHIFT_APP_NAME" > /dev/null 2>&1
 
 
 
@@ -22,7 +22,7 @@ email VARCHAR(50)
 SQL="
 INSERT INTO  myQuickStartApp (firstname, lastname, email) VALUES ('Andrew', 'Galdes', 'andrew.galdes@agix.com.au')
 "
-/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" -e ${SQL} "$OPENSHIFT_APP_NAME" > /dev/null 2>&1
+/usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -P "$OPENSHIFT_MYSQL_DB_PORT" -e "${SQL}" "$OPENSHIFT_APP_NAME" > /dev/null 2>&1
 
 
 
